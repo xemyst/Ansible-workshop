@@ -1,6 +1,6 @@
 ---
 - hosts: ansible
-  remote_user: "goldenspear"
+  remote_user: goldenspear
   become: true
   become_user: root
   vars:

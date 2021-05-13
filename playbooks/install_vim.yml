@@ -1,0 +1,14 @@
+---
+- hosts: ansible
+  remote_user: "{{ vault_connection_user }}"
+  become: true
+  become_user: root
+  vars:
+    ansible_ssh_pass: "{{ vault_connection_password }}"
+    ansible_become_pass: "{{ vault_connection_password }}"
+  tasks:
+    - debug:
+        msg: "{{ ansible_lsb }}"
+    - apt:
+        upgrade: True
+...
