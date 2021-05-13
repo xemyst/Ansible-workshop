@@ -1,0 +1,13 @@
+---
+- hosts: ansible
+  remote_user: goldenspear
+  become: true
+  become_user: root
+  vars:
+    ansible_ssh_pass: ansible
+    ansible_become_pass: ansible
+  tasks:
+    - name: Install basic configuration on machines
+      include_role:
+        name: configure_ssh
+...
