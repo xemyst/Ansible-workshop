@@ -1,0 +1,14 @@
+---
+- hosts: ansible
+  remote_user: "goldenspear"
+  become: true
+  become_user: root
+  vars:
+    ansible_ssh_pass: ansible
+    ansible_become_pass: ansible
+  tasks:
+    - debug:
+        msg: "{{ ansible_lsb }}"
+    - apt:
+        upgrade: True
+...
